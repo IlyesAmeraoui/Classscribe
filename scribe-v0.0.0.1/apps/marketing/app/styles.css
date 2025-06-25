@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&display=swap');
+
+.meow-script {
+  font-family: 'Meow Script', cursive;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes barAnimation {
+  0% { transform: scaleY(0.8); }
+  50% { transform: scaleY(1.2); }
+  100% { transform: scaleY(0.8); }
+}
+
+@keyframes moveLight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.recording-bar {
+  will-change: transform;
+  transform-origin: bottom;
+}
+
+.step-container {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.step-container[data-active="true"] {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
+  50% { transform: translateY(-10px) scale(1.2); opacity: 0.6; }
+}
+
+@keyframes floatNavbar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navbar-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+/* Light mode specific styles */
+:root[class~="light"] .login-button {
+  background: linear-gradient(to right, #3b82f6, #2563eb);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1),
+              0 4px 8px rgba(59, 130, 246, 0.1);
+}
+
+:root[class~="light"] .login-button:hover {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2),
+              0 8px 16px rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+:root[class~="light"] .login-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Input styles for light mode */
+:root[class~="light"] input[type="email"] {
+  background-color: rgb(255, 255, 255);
+  border-color: rgba(203, 213, 225, 0.4);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+:root[class~="light"] input[type="email"]:hover {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06);
+}
+
+:root[class~="light"] input[type="email"]:focus {
+  background-color: white;
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1),
+              0 2px 4px rgba(15, 23, 42, 0.06);
+}
+
+:root[class~="light"] input[type="email"]::placeholder {
+  color: rgba(20, 90, 189, 0.8);
+} 

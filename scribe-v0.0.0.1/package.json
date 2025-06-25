@@ -1,0 +1,17 @@
+{
+  "name": "classscribe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r build",
+    "dev": "pnpm --filter @classscribe/marketing dev",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.10"
+  }
+}
